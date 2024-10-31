@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#e3f3fd]">
+    <div
+      class="h-[100vh] flex justify-center items-center w-[100%] bg-[#e3f3fd] px-[15px] md:px-[150px]"
+    >
+      <div class="bg-white flex flex-col md:flex-row gap-[15px]">
+        <form class="w-[100%] md:w-[50%] py-[20px] px-[20px]">
+          <div class="flex justify-between pb-[20px]">
+            <h2 class="font-semibold">Mortgage Calculator</h2>
+            <button class="text-[12px] underline clear">Clear All</button>
+          </div>
+          <label class="flex flex-col pb-[15px]">
+            Mortgage Amount
+            <input
+              type="number"
+              placeholder="$"
+              class="amount outline-none border-solid border-[1px] placeholder:pl-[10px]"
+            />
+          </label>
+          <label class="flex gap-[10px] justify-between pb-[15px]">
+            <div>
+              <h5>Mortgage Term</h5>
+              <input
+                type="number"
+                placeholder="Years"
+                class="term outline-none border-solid border-[1px] w-[100%] md:w-[15vw] placeholder:pl-[10px]"
+              />
+            </div>
+            <div>
+              <h5>Interest Rate</h5>
+              <input
+                type="number"
+                placeholder="%"
+                step="0.001"
+                class="interest outline-none border-solid border-[1px] w-[100%] md:w-[15vw] placeholder:pl-[10px]"
+              />
+            </div>
+          </label>
+          <label>
+            <fieldset>
+              <legend>Mortgage Type</legend>
+              <div class="border-solid border-[1px] py-[3px] pl-[5px]">
+                <label for="repayments">
+                  <input
+                    type="radio"
+                    value="repayment"
+                    name="mortgageType"
+                    id="repayment"
+                  />
+                  <span>Repayment</span>
+                </label>
+              </div>
+              <div class="border-solid border-[1px] py-[3px] pl-[5px] mt-[5px]">
+                <label for="Interest">
+                  <input
+                    type="radio"
+                    value="InterestOnly"
+                    name="mortgageType"
+                    id="InterestOnly"
+                  />
+                  <span>Interest Only</span>
+                </label>
+              </div>
+            </fieldset>
+            <button
+              type="submit"
+              class="btn bg-[#d7da2f] mt-[15px] px-[10px] rounded-xl py-[2px]"
+            >
+              Calculate Repayments
+            </button>
+          </label>
+        </form>
+        <div
+          class="text-white w-[100%] md:w-[50%] py-[20px] bg-[#4e6e7e] rounded-bl-[40px] px-[15px]"
+        >
+          <div
+            class="hidden placeholder h-[100%] flex flex-col text-center items-center justify-center"
+          >
+            <img
+              src="assets/images/illustration-empty.svg"
+              alt=""
+              class="h-[100px]"
+            />
+            <h4 class="font-semibold pb-[10px]">Results shown here</h4>
+            <p>
+              Complete the form and click “calculate repayments” to see what
+              your monthly repayments would be.
+            </p>
+          </div>
+
+          <div class="results">
+            <h3 class="text-xl font-semibold pb-[10px]">Your results</h3>
+            <p>
+              Your results are shown below based on the information you
+              provided. To adjust the results, edit the form and click
+              “calculate repayments” again.
+            </p>
+            <div
+              class="bg-[#122f3f] py-[20px] px-[15px] mt-[20px] border-t border-t-[5px] border-[#d7da2f]"
+            >
+              <h5 class="text-sm text-[grey]">Your monthly repayments</h5>
+              <h2 class="repout text-[#d7da2f] text-2xl">$</h2>
+              <h5 class="text-sm text-[grey]">
+                Total you'll repay over the term
+              </h5>
+              <h2 class="overTime">$</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution text-center text-[#122f3f] pb-[15px] font-semibold">
+      Coded by <a href="github.com/yahayagodiwa" class="underline">Yahaya Godiwa</a>.
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
